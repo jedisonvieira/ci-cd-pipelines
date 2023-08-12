@@ -1,0 +1,32 @@
+{
+  "version": "31.0.0",
+  "files": {
+    "7ef36021cbf1beddfbcbe422e729fa315c400b266a4724fcb9e00a79a1e2efba": {
+      "source": {
+        "path": "asset.7ef36021cbf1beddfbcbe422e729fa315c400b266a4724fcb9e00a79a1e2efba",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "7ef36021cbf1beddfbcbe422e729fa315c400b266a4724fcb9e00a79a1e2efba.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "251e1352b9272d4a7d8639e861b3e6e375862be07142138bd79f9d6fd564a072": {
+      "source": {
+        "path": "BankStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "251e1352b9272d4a7d8639e861b3e6e375862be07142138bd79f9d6fd564a072.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
