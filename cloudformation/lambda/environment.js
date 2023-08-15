@@ -1,6 +1,6 @@
 exports.handler = async function (event, context) {
   const obj = {
-    Message: "API works! :) with namespace",
+    Message: "API works! :)",
   };
   try {
     return {
