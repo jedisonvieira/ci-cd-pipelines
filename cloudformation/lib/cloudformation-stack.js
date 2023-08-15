@@ -18,7 +18,7 @@ class CloudformationStack extends Stack {
     });
 
     const enviroments = api.root.addResource("enviroments");
-    const environment = enviroments.addResource(`${envConfig.env}`);
+    const environment = enviroments.addResource(`${process.env.NAMESPACE}`);
     environment.addMethod("GET", new LambdaIntegration(environmentFn));
   }
 }
