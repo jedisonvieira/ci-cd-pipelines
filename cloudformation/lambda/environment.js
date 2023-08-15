@@ -1,15 +1,16 @@
-const envConfig = require('../env');
+const envConfig = require("../env");
+
 exports.handler = async function (event, context) {
-  const environment = {
-    currentEnvironment: `${envConfig.env}`,
+  const transaction = {
+    env: envConfig.env,
   };
   try {
     return {
-      statusCode: 200,
+      statusCode: 201,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(environment),
+      body: JSON.stringify(transaction),
     };
   } catch (err) {
-    return { statusCode: 500, body: "Failed to show environment" };
+    return { statusCode: 500, body: "Failed to add transaction" };
   }
 };
