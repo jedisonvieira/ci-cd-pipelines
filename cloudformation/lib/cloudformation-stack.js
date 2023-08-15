@@ -6,7 +6,7 @@ class CloudformationStack extends Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
 
-    const environmentFn = new Function(this, "Environment", {
+    const environmentFn = new Function(this, `Environment - ${process.env.NAMESPACE}`, {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset("lambda"),
       handler: "environment.handler",
