@@ -1,16 +1,14 @@
-const envConfig = require("../env");
-
 exports.handler = async function (event, context) {
-  const transaction = {
-    env: envConfig.env,
+  const obj = {
+    Message: "API works! :)",
   };
   try {
     return {
       statusCode: 201,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(transaction),
+      body: JSON.stringify(obj),
     };
   } catch (err) {
-    return { statusCode: 500, body: "Failed to add transaction" };
+    return { statusCode: 500, body: "Error" };
   }
 };
