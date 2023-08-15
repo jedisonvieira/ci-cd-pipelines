@@ -10,7 +10,7 @@ class CloudformationStack extends Stack {
     const nameSpace = process.env.NAMESPACE;
     const stack = new Stack(app, `Stack-${nameSpace}`);
 
-    const environmentFn = new Function(stack, `Environment - ${nameSpace}`, {
+    const environmentFn = new Function(stack, "Environment", {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset("lambda"),
       handler: "environment.handler",
