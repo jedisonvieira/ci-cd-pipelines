@@ -1,27 +1,27 @@
 {
-  "version": "31.0.0",
+  "version": "33.0.0",
   "artifacts": {
-    "BankStack.assets": {
+    "CloudformationStack.assets": {
       "type": "cdk:asset-manifest",
       "properties": {
-        "file": "BankStack.assets.json",
+        "file": "CloudformationStack.assets.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
       }
     },
-    "BankStack": {
+    "CloudformationStack": {
       "type": "aws:cloudformation:stack",
       "environment": "aws://unknown-account/unknown-region",
       "properties": {
-        "templateFile": "BankStack.template.json",
+        "templateFile": "CloudformationStack.template.json",
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/251e1352b9272d4a7d8639e861b3e6e375862be07142138bd79f9d6fd564a072.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3bb45c738c609b76f6bd332daf11fd2ab3275bb636c18d850d506f1177dc8e40.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
-          "BankStack.assets"
+          "CloudformationStack.assets"
         ],
         "lookupRole": {
           "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
@@ -30,273 +30,101 @@
         }
       },
       "dependencies": [
-        "BankStack.assets"
+        "CloudformationStack.assets"
       ],
       "metadata": {
-        "/BankStack/Transactions": [
-          {
-            "type": "aws:cdk:hasPhysicalName",
-            "data": {
-              "Ref": "Transactions098C5767"
-            }
-          }
-        ],
-        "/BankStack/Transactions/Resource": [
+        "/CloudformationStack/Environment/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "Transactions098C5767"
+            "data": "EnvironmentServiceRole3FD213E5"
           }
         ],
-        "/BankStack/Balances": [
-          {
-            "type": "aws:cdk:hasPhysicalName",
-            "data": {
-              "Ref": "BalancesB107DCF2"
-            }
-          }
-        ],
-        "/BankStack/Balances/Resource": [
+        "/CloudformationStack/Environment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "BalancesB107DCF2"
+            "data": "Environment78414C64"
           }
         ],
-        "/BankStack/Transaction/ServiceRole/Resource": [
+        "/CloudformationStack/EnvironmentApi/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TransactionServiceRole8F6509C4"
+            "data": "EnvironmentApiB2077666"
           }
         ],
-        "/BankStack/Transaction/ServiceRole/DefaultPolicy/Resource": [
+        "/CloudformationStack/EnvironmentApi/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TransactionServiceRoleDefaultPolicy123A37E4"
+            "data": "EnvironmentApiDeployment610B97452b35308c9bafaef6b7cf44a83a432cc3"
           }
         ],
-        "/BankStack/Transaction/Resource": [
+        "/CloudformationStack/EnvironmentApi/DeploymentStage.prod/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "Transaction2728EE3D"
+            "data": "EnvironmentApiDeploymentStageprodFA2A62FF"
           }
         ],
-        "/BankStack/TransactionsQueue/Resource": [
+        "/CloudformationStack/EnvironmentApi/Endpoint": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TransactionsQueue38DCEC48"
+            "data": "EnvironmentApiEndpoint01DF1609"
           }
         ],
-        "/BankStack/SendToSQS/ServiceRole/Resource": [
+        "/CloudformationStack/EnvironmentApi/Default/enviroments/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SendToSQSServiceRole7A59DC8E"
+            "data": "EnvironmentApienviroments4E6C314C"
           }
         ],
-        "/BankStack/SendToSQS/ServiceRole/DefaultPolicy/Resource": [
+        "/CloudformationStack/EnvironmentApi/Default/enviroments/dev/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SendToSQSServiceRoleDefaultPolicy04FECD62"
+            "data": "EnvironmentApienviromentsdevCF19E7D3"
           }
         ],
-        "/BankStack/SendToSQS/Resource": [
+        "/CloudformationStack/EnvironmentApi/Default/enviroments/dev/GET/ApiPermission.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SendToSQS2BE6E3FD"
+            "data": "EnvironmentApienviromentsdevGETApiPermissionCloudformationStackEnvironmentApi67DD0036GETenviromentsdev24A2654D"
           }
         ],
-        "/BankStack/SendToSQS/DynamoDBEventSource:BankStackTransactions77A9107A/Resource": [
+        "/CloudformationStack/EnvironmentApi/Default/enviroments/dev/GET/ApiPermission.Test.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SendToSQSDynamoDBEventSourceBankStackTransactions77A9107AA32531E3"
+            "data": "EnvironmentApienviromentsdevGETApiPermissionTestCloudformationStackEnvironmentApi67DD0036GETenviromentsdev11E23F26"
           }
         ],
-        "/BankStack/CalculateBalance/ServiceRole/Resource": [
+        "/CloudformationStack/EnvironmentApi/Default/enviroments/dev/GET/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "CalculateBalanceServiceRole39FFCE85"
+            "data": "EnvironmentApienviromentsdevGETD306F94D"
           }
         ],
-        "/BankStack/CalculateBalance/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CalculateBalanceServiceRoleDefaultPolicy0F3BAABF"
-          }
-        ],
-        "/BankStack/CalculateBalance/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CalculateBalanceE5765B7A"
-          }
-        ],
-        "/BankStack/CalculateBalance/SqsEventSource:BankStackTransactionsQueue4441970F/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CalculateBalanceSqsEventSourceBankStackTransactionsQueue4441970F1CE94060"
-          }
-        ],
-        "/BankStack/GetBalances/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GetBalancesServiceRoleC2781910"
-          }
-        ],
-        "/BankStack/GetBalances/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GetBalancesServiceRoleDefaultPolicy2A224A99"
-          }
-        ],
-        "/BankStack/GetBalances/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GetBalances83F63172"
-          }
-        ],
-        "/BankStack/GetBalanceUser/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GetBalanceUserServiceRoleFC86FB37"
-          }
-        ],
-        "/BankStack/GetBalanceUser/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GetBalanceUserServiceRoleDefaultPolicyC554E234"
-          }
-        ],
-        "/BankStack/GetBalanceUser/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "GetBalanceUser55FC4770"
-          }
-        ],
-        "/BankStack/BankApi/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApiA343C631"
-          }
-        ],
-        "/BankStack/BankApi/Deployment/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApiDeploymentD9126F8C96b8fd8534011fe439fd8c0f9ea89d75"
-          }
-        ],
-        "/BankStack/BankApi/DeploymentStage.prod/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApiDeploymentStageprod974D6120"
-          }
-        ],
-        "/BankStack/BankApi/Endpoint": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApiEndpointFB633DA5"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibank2CA89A9A"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/transactions/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibanktransactions1C286A57"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/transactions/POST/ApiPermission.BankStackBankApi1D466B82.POST..bank.transactions": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibanktransactionsPOSTApiPermissionBankStackBankApi1D466B82POSTbanktransactionsAD0C4FF1"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/transactions/POST/ApiPermission.Test.BankStackBankApi1D466B82.POST..bank.transactions": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibanktransactionsPOSTApiPermissionTestBankStackBankApi1D466B82POSTbanktransactions353CFF31"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/transactions/POST/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibanktransactionsPOST56488F03"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalances4ADF3A8D"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/{user}/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalancesuserE48339F8"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/{user}/GET/ApiPermission.BankStackBankApi1D466B82.GET..bank.balances.{user}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalancesuserGETApiPermissionBankStackBankApi1D466B82GETbankbalancesuser81B2D461"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/{user}/GET/ApiPermission.Test.BankStackBankApi1D466B82.GET..bank.balances.{user}": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalancesuserGETApiPermissionTestBankStackBankApi1D466B82GETbankbalancesuserEA192518"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/{user}/GET/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalancesuserGET2C9D6F75"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/GET/ApiPermission.BankStackBankApi1D466B82.GET..bank.balances": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalancesGETApiPermissionBankStackBankApi1D466B82GETbankbalancesA1A3A405"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/GET/ApiPermission.Test.BankStackBankApi1D466B82.GET..bank.balances": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalancesGETApiPermissionTestBankStackBankApi1D466B82GETbankbalancesAACEE6F0"
-          }
-        ],
-        "/BankStack/BankApi/Default/bank/balances/GET/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "BankApibankbalancesGET963201C3"
-          }
-        ],
-        "/BankStack/CDKMetadata/Default": [
+        "/CloudformationStack/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/BankStack/CDKMetadata/Condition": [
+        "/CloudformationStack/CDKMetadata/Condition": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadataAvailable"
           }
         ],
-        "/BankStack/BootstrapVersion": [
+        "/CloudformationStack/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "BootstrapVersion"
           }
         ],
-        "/BankStack/CheckBootstrapVersion": [
+        "/CloudformationStack/CheckBootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CheckBootstrapVersion"
           }
         ]
       },
-      "displayName": "BankStack"
+      "displayName": "CloudformationStack"
     },
     "Tree": {
       "type": "cdk:tree",

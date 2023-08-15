@@ -21,14 +21,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Install Dependencies Angular
-        run: npm install
-        working-directory: ./angular
-
-      - name: Build Angular
-        run: npm run build
-        working-directory: ./angular
-
       - name: Install Dependencies CDN
         run: npm install
         working-directory: ./cloudformation
