@@ -1,7 +1,6 @@
 const { Stack } = require("aws-cdk-lib");
 const { Function, Runtime, Code } = require("aws-cdk-lib/aws-lambda");
 const { RestApi, LambdaIntegration } = require("aws-cdk-lib/aws-apigateway");
-const envConfig = require('../env');
 
 class CloudformationStack extends Stack {
   constructor(scope, id, props) {
