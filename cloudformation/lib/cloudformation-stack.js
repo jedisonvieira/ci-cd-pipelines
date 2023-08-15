@@ -6,7 +6,7 @@ const envConfig = require('../env');
 class CloudformationStack extends Stack {
   constructor(scope, id, props) {
     super(scope, id, props);
-    console.log(envConfig.env)
+
     const environmentFn = new Function(this, "Environment", {
       runtime: Runtime.NODEJS_14_X,
       code: Code.fromAsset("lambda"),
