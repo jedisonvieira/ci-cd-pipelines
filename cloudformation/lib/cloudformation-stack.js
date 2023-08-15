@@ -16,8 +16,8 @@ class CloudformationStack extends Stack {
       handler: "environment.handler",
     });
 
-    const api = new RestApi(stack, "EnvironmentApi", {
-      restApiName: "EnvironmentApi",
+    const api = new RestApi(stack, "Api", {
+      restApiName: `Api${nameSpace}`,
     });
 
     const enviroments = api.root.addResource("enviroments");
