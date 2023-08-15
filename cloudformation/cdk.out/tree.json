@@ -105,7 +105,7 @@
                       "s3Bucket": {
                         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                       },
-                      "s3Key": "054ae899a2f60bf11f42b47dba79c3dc0f35fd1713fe74f6be02bb1894c0ddfa.zip"
+                      "s3Key": "86eb4dab0d446e4440ba86d3f038ede36380e77f0fdd5e1286f3c3c661308e29.zip"
                     },
                     "handler": "environment.handler",
                     "role": {
@@ -184,7 +184,7 @@
                       "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
                       "aws:cdk:cloudformation:props": {
                         "deploymentId": {
-                          "Ref": "EnvironmentApiDeployment610B97452b35308c9bafaef6b7cf44a83a432cc3"
+                          "Ref": "EnvironmentApiDeployment610B97453d6958d1543a690ae9999690691a48a3"
                         },
                         "restApiId": {
                           "Ref": "EnvironmentApiB2077666"
@@ -242,20 +242,20 @@
                           "version": "2.91.0"
                         }
                       },
-                      "dev": {
-                        "id": "dev",
-                        "path": "CloudformationStack/EnvironmentApi/Default/enviroments/dev",
+                      "prod": {
+                        "id": "prod",
+                        "path": "CloudformationStack/EnvironmentApi/Default/enviroments/prod",
                         "children": {
                           "Resource": {
                             "id": "Resource",
-                            "path": "CloudformationStack/EnvironmentApi/Default/enviroments/dev/Resource",
+                            "path": "CloudformationStack/EnvironmentApi/Default/enviroments/prod/Resource",
                             "attributes": {
                               "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
                               "aws:cdk:cloudformation:props": {
                                 "parentId": {
                                   "Ref": "EnvironmentApienviroments4E6C314C"
                                 },
-                                "pathPart": "dev",
+                                "pathPart": "prod",
                                 "restApiId": {
                                   "Ref": "EnvironmentApiB2077666"
                                 }
@@ -268,11 +268,11 @@
                           },
                           "GET": {
                             "id": "GET",
-                            "path": "CloudformationStack/EnvironmentApi/Default/enviroments/dev/GET",
+                            "path": "CloudformationStack/EnvironmentApi/Default/enviroments/prod/GET",
                             "children": {
-                              "ApiPermission.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev": {
-                                "id": "ApiPermission.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev",
-                                "path": "CloudformationStack/EnvironmentApi/Default/enviroments/dev/GET/ApiPermission.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev",
+                              "ApiPermission.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.prod": {
+                                "id": "ApiPermission.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.prod",
+                                "path": "CloudformationStack/EnvironmentApi/Default/enviroments/prod/GET/ApiPermission.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.prod",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -308,7 +308,7 @@
                                           {
                                             "Ref": "EnvironmentApiDeploymentStageprodFA2A62FF"
                                           },
-                                          "/GET/enviroments/dev"
+                                          "/GET/enviroments/prod"
                                         ]
                                       ]
                                     }
@@ -319,9 +319,9 @@
                                   "version": "2.91.0"
                                 }
                               },
-                              "ApiPermission.Test.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev": {
-                                "id": "ApiPermission.Test.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev",
-                                "path": "CloudformationStack/EnvironmentApi/Default/enviroments/dev/GET/ApiPermission.Test.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.dev",
+                              "ApiPermission.Test.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.prod": {
+                                "id": "ApiPermission.Test.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.prod",
+                                "path": "CloudformationStack/EnvironmentApi/Default/enviroments/prod/GET/ApiPermission.Test.CloudformationStackEnvironmentApi67DD0036.GET..enviroments.prod",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
                                   "aws:cdk:cloudformation:props": {
@@ -353,7 +353,7 @@
                                           {
                                             "Ref": "EnvironmentApiB2077666"
                                           },
-                                          "/test-invoke-stage/GET/enviroments/dev"
+                                          "/test-invoke-stage/GET/enviroments/prod"
                                         ]
                                       ]
                                     }
@@ -366,7 +366,7 @@
                               },
                               "Resource": {
                                 "id": "Resource",
-                                "path": "CloudformationStack/EnvironmentApi/Default/enviroments/dev/GET/Resource",
+                                "path": "CloudformationStack/EnvironmentApi/Default/enviroments/prod/GET/Resource",
                                 "attributes": {
                                   "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
                                   "aws:cdk:cloudformation:props": {
@@ -400,7 +400,7 @@
                                       "integrationHttpMethod": "POST"
                                     },
                                     "resourceId": {
-                                      "Ref": "EnvironmentApienviromentsdevCF19E7D3"
+                                      "Ref": "EnvironmentApienviromentsprodE38D2B9F"
                                     },
                                     "restApiId": {
                                       "Ref": "EnvironmentApiB2077666"

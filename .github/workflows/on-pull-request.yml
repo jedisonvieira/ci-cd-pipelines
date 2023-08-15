@@ -1,12 +1,12 @@
-name: Deploy to Stage
+name: Deploy PR Environment
 on:
-  push:
+  pull_request:
     branches: [main]
   workflow_dispatch:
 jobs:
   deploy:
     env:
-      NAMESPACE: stage
+      NAMESPACE: pr${{ github.event.number }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

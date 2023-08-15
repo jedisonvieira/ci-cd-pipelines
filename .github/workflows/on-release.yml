@@ -1,12 +1,12 @@
-name: Deploy to Stage
+name: Deploy to Prod
 on:
-  push:
-    branches: [main]
+  release:
+    types: [published]
   workflow_dispatch:
 jobs:
   deploy:
     env:
-      NAMESPACE: stage
+      NAMESPACE: prod
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

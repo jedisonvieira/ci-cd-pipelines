@@ -1,12 +1,12 @@
-name: Deploy to Stage
+name: Destroy PR Environment
 on:
-  push:
-    branches: [main]
+  pull_request:
+    types: [closed]
   workflow_dispatch:
 jobs:
-  deploy:
+  destroy:
     env:
-      NAMESPACE: stage
+      NAMESPACE: pr${{ github.event.number }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -25,6 +25,6 @@ jobs:
         run: npm install
         working-directory: ./cloudformation
 
-      - name: Deploy CDN
-        run: npm run deploy
+      - name: Destroy CDN
+        run: npm run destroy
         working-directory: ./cloudformation
